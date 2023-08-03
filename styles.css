@@ -1,0 +1,21 @@
+body{
+    background-color: lightblue;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+#container{
+    height: 400px;
+    display: flex;
+    align-items: flex-end;
+    /* border:solid black 2px; */
+    background-color: white;
+    margin-top: 35px;
+}
+
+
+.bar{
+    background-color: black;
+    width: 20px;
+    margin: 2px;
+}
