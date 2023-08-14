@@ -27,11 +27,28 @@ function init(){
 
 
 
-function play(){
+// function play(){
+//     const copy = [...array];
+//     const move1 = bubbleSort(copy);
+//     animate(move1);
+// }
+
+function play() {
     const copy = [...array];
-    const move1 = bubbleSort(copy);
-    animate(move1);
-}
+    const selectedAlgorithm = document.querySelector('input[name="algorithm"]:checked').value;
+  
+    let moves;
+  
+    if (selectedAlgorithm === 'bubble') {
+      moves = bubbleSort(copy);
+    } else if (selectedAlgorithm === 'select') {
+      moves = selectionSort(copy);
+    } else if (selectedAlgorithm === 'insert') {
+      moves = insertionSort(copy);
+    }
+  
+    animate(moves);
+  }
 
 
 
@@ -74,6 +91,68 @@ do{
     return moves;
 }
 
+//selection sort function
+function selectionSort(arr) {
+    const n = arr.length;
+    const moves = [];
+  
+    for (let i = 0; i < n - 1; i++) {
+      let minIndex = i;
+  
+      
+      for (let j = i + 1; j < n; j++) {
+        moves.push({
+          indices: [j, minIndex],
+          type: "cmp"
+        });
+        if (arr[j] < arr[minIndex]) {
+          minIndex = j;
+        }
+      }
+  
+      // Push comparison move for the selected minimum element
+      moves.push({
+        indices: [i, minIndex],
+        type: "cmp"
+      });
+    
+      // Swap the minimum element with the current element
+      if (minIndex !== i) {
+        moves.push({
+          indices: [i, minIndex],
+          type: "swap"
+        });
+        [arr[i], arr[minIndex]] = [arr[minIndex], arr[i]];
+      }
+    }
+  
+    return moves;
+  }
+
+//insertion sort function
+function insertionSort(arr){
+
+    const n=arr.length;
+    const moves=[];
+    for(let i=1;i<n;i++){
+        let key=arr[i]
+        let j=i-1;
+        for(;j>=0 && arr[j]>key;j--){
+           
+           moves.push({
+            indices:[j+1,j],
+            type:"swap"
+           })
+           arr[j+1]=arr[j];
+        }
+        
+        arr[j+1]=key;
+    }
+
+    return moves;
+  }
+
+//showbars function
 function showbars(move){
 container.innerHTML = "";
 for(let i = 0; i < array.length ; i++){
