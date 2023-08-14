@@ -12,18 +12,20 @@
     <div class="header">
         <label for=""> <b> Enter The number of elements </b></label>    
         <input type="number" id="mynum" value="0"> 
-        <button onclick="myFunction()">Click here</button>
-        <!-- <div>
-            <input type="radio" id="huey" name="drone" value="huey" checked />
-            <label for="huey">BubbleSort</label>
-          </div>
-        
-          <div>
-            <input type="radio" id="dewey" name="drone" value="dewey" />
-            <label for="dewey">Selection Sort</label>
-          </div> -->
+        <button onclick="myFunction()">Generate Array</button>
+                <!-- Add radio buttons for sorting algorithms -->
+        <label>
+    <input type="radio" name="algorithm" value="bubble"> <b>Bubble Sort</b>
+        </label>
+        <label>
+    <input type="radio" name="algorithm" value="select"> <b>Selection Sort</b>
+        </label>
+        <label>
+    <input type="radio" name="algorithm" value="insert" > <b>Insertion Sort</b>
+        </label>
+  
         <button onclick="play()">sort</button>
-        <!-- <p id="demo"></p> -->
+
     </div>
 
     <div id="container">
@@ -34,10 +36,7 @@
 
     <hr>
 
-    <div>
-        <!-- <button onclick="init()">init</button> -->
-    </div>
-
+    <footer><b>Made with ❤️</b> </footer>
     <script src="index.js"></script>
 </body>
 </html>
