@@ -19,3 +19,8 @@ body{
     width: 20px;
     margin: 2px;
 }
+button{
+    color:white;
+    background-color: black;
+}
+
