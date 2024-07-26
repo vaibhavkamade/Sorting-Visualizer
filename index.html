@@ -10,33 +10,26 @@
 
     <h1>Sorting Visualizer</h1>
     <div class="header">
-        <label for=""> <b> Enter The number of elements </b></label>    
-        <input type="number" id="mynum" value="0"> 
-        <button onclick="myFunction()">Generate Array</button>
-                <!-- Add radio buttons for sorting algorithms -->
-        <label>
-    <input type="radio" name="algorithm" value="bubble"> <b>Bubble Sort</b>
-        </label>
-        <label>
-    <input type="radio" name="algorithm" value="select"> <b>Selection Sort</b>
-        </label>
-        <label>
-    <input type="radio" name="algorithm" value="insert" > <b>Insertion Sort</b>
-        </label>
-  
-        <button onclick="play()">sort</button>
-
-    </div>
-
-    <div id="container">
+        <label for="mynum"> <b>Enter The number of elements</b></label>    
+        <input type="number" id="mynum" value="20" min="0" max="20"> 
+        <button id="generateButton" onclick="myFunction()">Generate Array</button>
         
-          
-      
+        <!-- Dropdown for sorting algorithms -->
+        <label for="algorithm"> <b>Select Sorting Algorithm</b></label>
+        <select id="algorithm">
+            <option value="bubble">Bubble Sort</option>
+            <option value="select">Selection Sort</option>
+            <option value="insert">Insertion Sort</option>
+        </select>
+        
+        <button id="sortButton" onclick="play()">Sort</button>
     </div>
+
+    <div id="container"></div>
 
     <hr>
 
-    <footer><b>Made with ❤️</b> </footer>
+    <footer><b>Made with ❤️</b></footer>
     <script src="index.js"></script>
 </body>
 </html>
